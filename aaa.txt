@@ -1,4 +1,4 @@
-testujemy
+testujemy w piecowicach
 czy
 git
 dziala
