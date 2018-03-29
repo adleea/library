@@ -1,4 +1,4 @@
 testujemy
 czy
 git
-dziala
+dziala, a tutaj wprowadzamy zmiany w linii 4
