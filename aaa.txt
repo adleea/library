@@ -1,5 +1,0 @@
-testujemy w piecowicach
-czy
-git
-dziala, 
-a tutaj wprowadzamy zmiany w linii 5
