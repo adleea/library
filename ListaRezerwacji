@@ -18,7 +18,7 @@ public:
 
         void anuluj_rezerwacje(int ID){
 
-            for(int i=0; i<lista_r.size(); i++)
+            for(int i=0; i<lista_r.size(); i++)     //~rezerwacja <uzycie destruktora>
             {
                 if(lista_r.at(i).pokazID() == ID)
                     lista_r.erase(lista_r.begin()+i);
