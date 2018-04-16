@@ -1,4 +1,5 @@
 #include<cstring>
+#include <sstream>
 #include"Recenzja.cpp"
 #include<iostream>
 using namespace std;
@@ -69,33 +70,41 @@ public:
 	}
     string pokazOpis()
     {
-        return to_string(ID) + ". " + autor + ", " + tytul + ". Recenzja: " + recenzja.pokazRecenzje() + ". Status: " + opisStatusu();
+    	stringstream ss;
+    	ss<<+ ". " + autor + ", " + tytul + ". Recenzja: " + recenzja.pokazRecenzje() + ". Status: " + opisStatusu();
+        return ss.str();			//ID) + ". " + autor + ", " + tytul + ". Recenzja: " + recenzja.pokazRecenzje() + ". Status: " + opisStatusu();
     }
 
     void zarezerwuj()
     {
+    	stringstream ss;
         if (status == 0) {
             zmienStatus(1);
         } else {
-            cerr << "Nie mozna zarezerwowac ksiazki o ID: " << to_string(ID) << ".\n";
+        	ss<< ".\n";
+            cerr << "Nie mozna zarezerwowac ksiazki o ID: " << ss.str();		//to_string(ID) << ".\n";
         }
     }
 
     void wypozycz()
     {
+    	stringstream ss;
         if (status == 0) {
             zmienStatus(2);
         } else {
-            cerr << "Nie mozna wypozyczyc ksiazki o ID: " << to_string(ID) << ".\n";
+        	ss<< ".\n";
+            cerr << "Nie mozna wypozyczyc ksiazki o ID: " << ss.str();		//to_string(ID) << ".\n";
         }
     }
 
     void zwroc()
     {
+    	stringstream ss;
         if (status == 2) {
             zmienStatus(0);
         } else {
-            cerr << "Nie mozna zwrocic ksiazki o ID: " << to_string(ID) << ".\n";
+        	ss<< ".\n";
+            cerr << "Nie mozna zwrocic ksiazki o ID: " << ss.str();			//to_string(ID) << ".\n";
         }
     }
 
@@ -114,4 +123,5 @@ public:
         return status == 0;
     }
 };
+
 
