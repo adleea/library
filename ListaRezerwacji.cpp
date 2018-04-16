@@ -2,10 +2,10 @@
 #include <vector>
 #include <cstdlib>
 #include "Rezerwacja.cpp"
+#include "KatalogKsiazek.cpp"
 
 using namespace std;
 
-//Tworzenie klasy
 
 class ListaRezerwacji{
 
@@ -26,7 +26,7 @@ public:
                     lista_r.erase(lista_r.begin()+i);
             }
         }
-       // pokaz1rezerwacje();
+       
 
         vector <Rezerwacja>  pokaz_rezerwacje()
         {
@@ -35,11 +35,12 @@ public:
 
         void zrob_rezerwacje(int ID){
 
-//            for(int i=0; i<katalog.size(); i++)
-//            {
-//                if(katalog.at(i).pokazID() == ID)
-//                    lista_r.push_back(Rezerwacja);
-//            }
+            for(int i=0; i<katalog.size(); i++)
+            {
+                if(katalog.at(i).pokazID() == ID)
+                    lista_r.push_back(Rezerwacja);
+            }
         }
 
 };
+
