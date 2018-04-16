@@ -1,6 +1,8 @@
 #include<cstring>
+#include <sstream>
 #include"Recenzja.cpp"
 #include<iostream>
+#include "utility.cpp"
 using namespace std;
 class Ksiazka
 {
@@ -74,28 +76,33 @@ public:
 
     void zarezerwuj()
     {
+    	
         if (status == 0) {
             zmienStatus(1);
         } else {
+   
             cerr << "Nie mozna zarezerwowac ksiazki o ID: " << to_string(ID) << ".\n";
         }
     }
 
     void wypozycz()
     {
+    	
         if (status == 0) {
             zmienStatus(2);
         } else {
-            cerr << "Nie mozna wypozyczyc ksiazki o ID: " << to_string(ID) << ".\n";
+                  cerr << "Nie mozna wypozyczyc ksiazki o ID: " << to_string(ID) << ".\n";
         }
     }
 
     void zwroc()
     {
+    
         if (status == 2) {
             zmienStatus(0);
         } else {
-            cerr << "Nie mozna zwrocic ksiazki o ID: " << to_string(ID) << ".\n";
+       
+            cerr << "Nie mozna zwrocic ksiazki o ID: " <<to_string(ID) << ".\n";
         }
     }
 

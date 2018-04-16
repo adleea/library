@@ -8,6 +8,9 @@ using namespace std;
 #include "Ksiazka.cpp"
 #endif
 #include "ListaWypozyczen.cpp"
+
+#include "utility.h"
+
 class KatalogKsiazek
 {
 private:
@@ -91,7 +94,7 @@ public:
             }
         }
         cerr << "Nie ma ksiazki o ID: " + to_string(ID) + ".\n";
-        return nullptr;
+        return NULL;
     }
 
     void wypiszDostepneKsiazki() {

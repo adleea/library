@@ -18,7 +18,7 @@ public:
     
     void anulujWypozyczenie(Ksiazka *ksiazka)
     {
-        for(int i = 0; i < lista_w.size(); i++)
+        for(int i = 0; i < static_cast<int>(lista_w.size()); i++)
         {
             if(lista_w.at(i).pokazID() == ksiazka->pokazID())
                 lista_w.erase(lista_w.begin()+i);
@@ -28,7 +28,7 @@ public:
 
     void przedluzTermin(int ID)
     {
-        for(int i = 0; i < lista_w.size(); i++)
+        for(int i = 0; i < static_cast<int>(lista_w.size()); i++)
         {
             if(lista_w.at(i).pokazID() == ID)
             {
@@ -48,7 +48,7 @@ public:
     }
     
     void wypiszWypozyczenia() {
-        for(int i = 0; i < lista_w.size(); i++) {
+        for(int i = 0; i < static_cast<int>(lista_w.size()); i++) {
             cout << lista_w.at(i).pokazOpis() << endl;
         }
     };
