@@ -1,15 +1,19 @@
 #include<cstring>
 #include<sstream>
+#include <time.h>
 
 using namespace std;
 class Data
 {
 
 private:
-    struct tm data = { 0, 0, 12 };
+    struct tm data;
 public:
 	Data(int year, int month, int day)
 	{
+        data.tm_sec = 0;
+        data.tm_min = 0;
+        data.tm_hour = 12;
         data.tm_year = year - 1900;
         data.tm_mon = month - 1;
         data.tm_mday = day;
