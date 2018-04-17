@@ -1,34 +1,50 @@
-#include <string>
+#include <iostream>
+#include <vector>
 #include <cstdlib>
-#include <ctime>
+#ifndef head
+#define head
+#include "Rezerwacja.cpp"
+#include "KatalogKsiazek.cpp"
+#endif
+
 using namespace std;
 
-class Rezerwacja {
+
+class ListaRezerwacji{
+
 private:
-    int ID;
-
+        int liczbaRezerwacji;
+        vector <Rezerwacja> lista_r;
 public:
-    int status, nowyStatus;
-    Rezerwacja(int ID){
-        this->ID = ID;
-        this->status = 0;
-    };
-    void zmienStatus(int nowyStatus){
+        ListaRezerwacji(){
 
-        this->status = nowyStatus;
-    };
-    int pokazStatus(){
+            liczbaRezerwacji = 0;
+        };
 
-        return this->status;
-    };
-    int pokazID(){
+        void anuluj_rezerwacje(Rezerwacja *rezerwacja){
+         {
+        for(int i = 0; i < static_cast<int>(lista_r.size()); i++)
+        {
+            if(lista_r.at(i).pokazID() == rezerwacja->pokazID())
+                lista_r.erase(lista_r.begin()+i);
+        }
+        rezerwacja->zwroc();
+    }
+           
+       
 
-        return this->ID;
-    };
-    
-    int dodajID(){
-        srand( (unsigned int)time( NULL ) );
-        long int ID=(rand() % 500)+101;
-        return (int)ID;
-    };
+        vector <Rezerwacja>  pokaz_rezerwacje()
+        {
+            return lista_r;
+        };
+
+        void zrob_rezerwacje(int ID){
+
+            for(int i=0; i<katalog.size(); i++)
+            {
+                if(katalog.at(i).pokazID() == ID)
+                    lista_r.push_back(Rezerwacja);
+            }
+        }
+
 };
